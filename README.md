@@ -31,8 +31,9 @@ The project combines a powerful backend with an intuitive, chat-based frontend t
 ```bash
 git clone <your-repository-url>
 cd <repository-directory>
+```
 3. Set Up a Virtual Environment
-Bash
+```Bash
 
 # For macOS/Linux
 python3 -m venv venv
@@ -41,12 +42,14 @@ source venv/bin/activate
 # For Windows
 python -m venv venv
 .\venv\Scripts\activate
+```
 4. Install Dependencies
 The required packages are listed in requirements.txt. Install them using pip:
 
-Bash
+```Bash
 
 pip install -r requirements.txt
+```
 5. Configure Environment Variables
 Sign up at Groq to get your free API key.
 
@@ -60,9 +63,9 @@ GROQ_API_KEY="your_groq_api_key_here"
 🚀 Usage Guide
 To launch the web application, run the main.py file using Uvicorn:
 
-Bash
-
+```Bash
 uvicorn main:app --reload
+```
 The application will be available at https://www.google.com/search?q=http://127.0.0.1:8000.
 
 Open this URL in your browser to access the chat interface.
@@ -80,7 +83,7 @@ For stock data: "What is the current price and market cap for AAPL?"
 For prediction: "Predict the stock price for NVDA"
 
 ⚙️ Technical Details
-Core Libraries
+```Core Libraries
 FastAPI: Serves as the web framework for the backend API.
 
 LangChain: The core framework used to build the ReAct agent, manage tools, and orchestrate the LLM workflow.
@@ -94,7 +97,7 @@ Sentence-Transformers: Generates the embeddings for the text chunks from the upl
 yfinance: Fetches live stock market data.
 
 scikit-learn: Used to build and train the simple linear regression model for price prediction.
-
+```
 Application Architecture
 Frontend-Backend Separation: The UI is built with standard index.html, style.css, and script.js files, which communicate with a completely separate FastAPI backend.
 
@@ -159,7 +162,7 @@ Problem: The stock data and prediction tools return data in a JSON format, which
 Solution: The frontend JavaScript includes a formatAnswer function that detects JSON-like strings in the agent's response. It then parses this string and renders it as a neatly formatted HTML block, improving readability.
 
 📂 File Structure Overview
-project-root/
+```project-root/
 │
 ├── main.py                # The main FastAPI application logic.
 ├── tools.py               # Defines the tools available to the LangChain agent.
@@ -172,6 +175,7 @@ project-root/
     ├── script.js          # JavaScript for frontend logic (API calls, DOM manipulation).
     ├── styles.css         # CSS for styling the chat interface.
     └── favicon.ico        # The application's favicon.
+```
 📄 License
 This project is licensed under the MIT License. Feel free to use, modify, and distribute it for personal or professional use.
 
@@ -181,5 +185,4 @@ Groq for providing the high-speed LPU™ Inference Engine.
 LangChain for the powerful agent and tool management framework.
 
 FastAPI for the excellent web framework.
-
 

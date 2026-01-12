@@ -18,6 +18,7 @@ Maintaining session-isolated state so each user’s uploaded data is private
 The backend is built with FastAPI, while the frontend uses HTML, CSS, and vanilla JavaScript for a simple chat-based interface.
 
 ✨ Key Features
+
 🔹 Agentic Reasoning (LangGraph)
 
 Uses an agent graph instead of a monolithic chain
@@ -56,7 +57,7 @@ File upload + text input
 
 No frontend frameworks → easy to debug and extend
 
-```🧱 Tech Stack
+🧱 Tech Stack
 Backend
 
 FastAPI – API server and routing
@@ -80,7 +81,7 @@ HTML
 CSS
 
 Vanilla JavaScript 
-```
+
 
 ```
 📂 Project Structure

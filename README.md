@@ -56,7 +56,7 @@ File upload + text input
 
 No frontend frameworks → easy to debug and extend
 
----🧱 Tech Stack
+```🧱 Tech Stack
 Backend
 
 FastAPI – API server and routing
@@ -80,8 +80,9 @@ HTML
 CSS
 
 Vanilla JavaScript 
----
+```
 
+```
 📂 Project Structure
 project-root/
 │
@@ -101,44 +102,51 @@ project-root/
     ├── script.js          # Frontend logic
     ├── styles.css         # UI styling
     └── favicon.ico
+```
 
 ⚙️ Installation & Setup
 1️⃣ Prerequisites
-
+```
 Python 3.8+
-
 Git
+```
 
 2️⃣ Clone Repository
+```
 git clone <your-repository-url>
 cd <repository-directory>
-
+```
 3️⃣ Create Virtual Environment
 # Windows
+```
 python -m venv venv
 .\venv\Scripts\activate
-
+```
 # macOS / Linux
+```
 python3 -m venv venv
 source venv/bin/activate
-
+```
 4️⃣ Install Dependencies
+```
 pip install -r requirements.txt
-
+```
 5️⃣ Environment Variables
 
 Create a .env file in the root directory:
-
+```
 GROQ_API_KEY=your_groq_api_key_here
-
+```
 ▶️ Running the Application
-uvicorn main:app --reload
 
+```
+uvicorn main:app --reload
+```
 
 Open in browser:
-
+```
 http://127.0.0.1:8000
-
+```
 🧪 How to Use
 Step 1: Upload PDF
 
@@ -194,22 +202,6 @@ Not production-hardened (no auth, no persistence)
 
 Designed for learning, demos, and experimentation
 
-🧩 Challenges Solved
-✔ Tool Selection
-
-Solved via descriptive tool metadata and structured agent reasoning.
-
-✔ User-Specific RAG
-
-Handled through session-scoped vector stores.
-
-✔ Ambiguous Queries
-
-Agent explicitly requests clarification instead of guessing.
-
-✔ Debuggability
-
-Minimal frontend + explicit backend state checks.
 
 📜 License
 

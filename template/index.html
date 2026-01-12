@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial AI Agent</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans flex flex-col items-center min-h-screen p-4">
 
+    <div class="w-full max-w-4xl mx-auto">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-white">Financial AI Agent</h1>
+            <p class="text-gray-400 mt-2">Upload a financial report (PDF) and ask complex questions.</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="bg-gray-800 rounded-xl shadow-2xl p-6 md:p-8">
+            
+            <!-- Step 1: Upload PDF -->
+            <div class="mb-6 border-b border-gray-700 pb-6">
+                <h2 class="text-xl font-semibold mb-3 text-white">Step 1: Upload Financial Report</h2>
+                <div id="upload-area" class="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center cursor-pointer hover:border-blue-500 transition-colors">
+                    <input type="file" id="pdf-upload" class="hidden" accept="application/pdf">
+                    <p id="upload-text" class="text-gray-400">Drag & drop a PDF file here, or click to select</p>
+                    <p id="upload-status" class="text-blue-400 font-medium mt-2"></p>
+                </div>
+            </div>
+
+            <!-- Step 2: Chat with Agent -->
+            <div>
+                <h2 class="text-xl font-semibold mb-3 text-white">Step 2: Ask the Agent</h2>
+                
+                <!-- Chat History -->
+                <div id="chat-history" class="h-80 overflow-y-auto bg-gray-900 rounded-lg p-4 mb-4 border border-gray-700">
+                    <!-- Chat messages will appear here -->
+                     <div class="message agent-message">
+                        <div class="message-content">
+                            <p>Hello! I'm your financial assistant. Please upload a PDF report to get started. You can also ask for real-time stock data (e.g., "What's the price of TSLA?") or a price forecast (e.g., "Predict the stock price for NVDA").</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Query Input -->
+                <div class="flex items-center space-x-3">
+                    <input type="text" id="user-query" class="flex-grow bg-gray-700 border border-gray-600 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" placeholder="Type your question here...">
+                    <button id="send-query" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-lg transition-colors disabled:bg-gray-500 disabled:cursor-not-allowed">
+                        Send
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-8 text-gray-500 text-sm">
+            <p>Powered by FastAPI, LangChain, and Groq.</p>
+        </footer>
+    </div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Financial AI Agent</title>
+
+  <!-- Tailwind (OK for dev) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="bg-slate-900 text-gray-100">
+
+  <div class="max-w-3xl mx-auto mt-10 bg-slate-800 p-6 rounded-xl">
+
+    <h1 class="text-3xl font-bold text-center mb-2">Financial AI Agent</h1>
+    <p class="text-center text-gray-400 mb-6">
+      Upload a financial report (PDF) and ask questions.
+    </p>
+
+    <!-- Upload -->
+    <div
+      id="upload-area"
+      class="border-2 border-dashed border-gray-500 rounded-lg p-6 text-center cursor-pointer mb-4"
+    >
+      Click to upload PDF
+    </div>
+
+    <input id="pdf-upload" type="file" accept="application/pdf" hidden />
+    <p id="upload-status" class="text-sm text-green-400 mb-4"></p>
+
+    <!-- Chat -->
+    <div
+      id="chat-history"
+      class="h-64 overflow-y-auto border border-gray-600 rounded p-3 mb-4 bg-slate-900"
+    ></div>
+
+    <div class="flex gap-2">
+      <input
+        id="user-query"
+        class="flex-1 p-2 rounded bg-slate-700"
+        placeholder="Ask a question..."
+      />
+      <button
+        id="send-query"
+        class="bg-blue-600 px-4 rounded"
+      >
+        Send
+      </button>
+    </div>
+
+  </div>
+
+  <!-- JS MUST BE LAST -->
+  <script src="/static/script.js"></script>
+</body>
+</html>

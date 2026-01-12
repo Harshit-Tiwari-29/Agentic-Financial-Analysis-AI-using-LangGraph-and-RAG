@@ -1,4 +1,4 @@
-Agentic Financial Analysis AI (LangGraph + RAG)
+## Agentic Financial Analysis AI (LangGraph + RAG)
 
 A full-stack, session-based Financial Analysis AI application built with FastAPI, LangChain / LangGraph, and Retrieval-Augmented Generation (RAG).
 The system allows users to upload financial reports (PDFs), ask document-specific questions, fetch live stock data, and run basic price predictions through an agentic workflow.
